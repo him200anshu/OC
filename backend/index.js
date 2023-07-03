@@ -19,6 +19,7 @@ app.post("/run", async (req,res) => {
         return res.status(404).json({ success: false,error: "Empty code!"});
     }
     const filePath = await generateFile(language,code);
+    const output = await executeCpp(filePath);
     res.json({filePath});
 });
 
