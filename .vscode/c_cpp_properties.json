@@ -3,14 +3,14 @@
         {
             "name": "Win32",
             "includePath": [
-                "C:\\MinGW\\lib\\gcc\\mingw32\\4.8.1\\include"
+                "C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\13.1.0\\include"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "C:/MinGW/bin/g++.exe"
+            "compilerPath": "C:\\msys64\\mingw64\\bin\\g++.exe"
         }
     ],
     "version": 4
