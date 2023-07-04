@@ -10,9 +10,20 @@ if(!fs.existsSync(outputPath)){
 
 exports.executeCpp = (filePath) => {
    const jobID = path.basename(filePath).split(".")[0];
-   const outPath = path.join(outPath, `${jobID}.exe`);
+   const outPath = path.join(outputPath, `${jobID}.exe`);
    console.log(outPath);
-   /*return new Promise((resolve,reject) => {
-
-   });*/
+   return new Promise((resolve,reject) => {
+    exec(
+        `g++ ${filePath} -o ${outPath} && cd ${outPath} && .\\4{jobID}.exe`,
+        (error,stdout,stderr) => {
+            if (error) {
+                reject({error, stderr});
+            }
+            if(stderr){
+                reject(stderr);
+            }
+            resolve(stdout);
+        }
+    );
+   });
 };
