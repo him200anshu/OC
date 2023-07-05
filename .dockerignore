@@ -1,0 +1,28 @@
+# Ignore files and directories commonly excluded in Docker builds
+
+# Ignore development-specific directories
+node_modules
+npm-debug.log
+
+# Ignore build artifacts
+build
+dist
+
+# Ignore version control files and directories
+.git
+.gitignore
+
+# Ignore editor-specific files
+.vscode
+.idea
+
+# Ignore environment-specific files
+.env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+.env.local
+.env.*.local
+.env.override

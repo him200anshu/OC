@@ -12,7 +12,7 @@ exports.generateFile =async (format,content) => {
    const jobID = uuid();
    const fileName = `${jobID}.${format}`;
    const filePath = path.join(dirCodes, fileName);
-   filePath.replace(/\\/g, "\\\\");
+   //SfilePath.replace(/\\/g, "\\\\");
    await fs.writeFileSync(filePath, content);
    return filePath; 
 }
