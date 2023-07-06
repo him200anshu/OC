@@ -18,6 +18,17 @@ const generateFile = async (format, content) => {
   return filePath;
 };
 
+const createInput = async (content) => {
+  const jobID = uuid();
+  const fileName = `${jobID}.txt`;
+  const filePath = path.join(dirCodes, fileName);
+
+  await fs.promises.writeFile(filePath, content);
+
+  return filePath;
+};
+
+
 module.exports = {
-  generateFile,
+  generateFile,createInput
 };

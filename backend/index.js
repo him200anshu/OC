@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require('cors');
-const { generateFile } = require("./generateFile");
+const { generateFile , createInput} = require("./generateFile");
 const { executeCpp } = require("./executeCpp");
 
 const app = express();
@@ -20,7 +20,10 @@ app.post("/run", async (req, res) => {
 
   try {
     const filePath = await generateFile(language, code);
-    const output = await executeCpp(filePath, input);
+    const inPath = await createInput(input);
+    console.log(filePath);
+    console.log(inPath);
+    const output = await executeCpp(filePath, inPath);
 
     res.json({ output });
   } catch (error) {
